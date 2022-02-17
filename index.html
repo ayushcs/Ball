@@ -34,6 +34,9 @@
 
 
     init();
+    window.onmousemove = (e) => {
+        positionX = (event.x/50)
+    }
     
     window.onresize =  function() {
         size = 10;
@@ -64,7 +67,8 @@
         while( i < 2)
         {
             elements[i] = document.createElement('input');
-            elements[i].type = 'checkbox';
+            elements[i].type = 'radio';
+            elements[i].name = 'radio'+i;
             container.appendChild(elements[i]);
             i++;
         }
@@ -88,7 +92,8 @@
             while( i < canvasWidth * canvasHeight)
             {
                 element = elements[i] = document.createElement("input");
-                element.type = "checkbox";
+                elements[i].type = 'radio';
+                elements[i].name = 'radio'+i;
                 container.appendChild(element);
                 i++;
             }
